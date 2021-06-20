@@ -13,6 +13,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', 'OrderController@index');
+
+Route::resource('courses', CourseController::class);
+Route::resource('system_variables', SystemVariableController::class);
+Route::resource('user_variables', UserVariableController::class);
+Route::resource('orders', OrderController::class);
